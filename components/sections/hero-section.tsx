@@ -31,12 +31,12 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 max-w-4xl mx-auto">
-          Supercharge Education with <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Intelligent AI</span>
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 max-w-4xl mx-auto">
+        The End of One-Size-Fits-All <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Education.</span>
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Advanced AI tools for institutions to innovate, educators to excel, and students to thrive. Transform learning experiences with cutting-edge technology.
+        Mentron personalizes learning for every student, freeing brilliant minds from old teaching. We empower educators and modernize institutions to truly unlock potential.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 lg:mb-16">
@@ -47,7 +47,7 @@ const HeroSection = () => {
           </Button>
           <Button asChild variant="outline" className={`border-primary/20 hover:bg-primary/5 font-medium px-6 py-3 rounded-md transition-shadow duration-300 hover:shadow-[0_0_16px_4px_rgba(0,215,255,0.6)] ${theme === 'dark' ? 'text-white' : ''}`}>
             <Link href="/individual-inquiry">
-              Empower Your Journey <ExternalLink className="ml-2 h-4 w-4" />
+              Join Waitlist <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

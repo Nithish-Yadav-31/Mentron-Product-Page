@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         <div className="prose max-w-none">
           <section className="mb-8">
             <p className="text-muted-foreground mb-4">
-              Last updated: January 2024
+              Last updated: May 2025
             </p>
             
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>

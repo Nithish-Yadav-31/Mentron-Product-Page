@@ -9,10 +9,6 @@ const faqs = [
     answer: "Mentron uses advanced machine learning algorithms that adapt in real-time to each learner's behavior, pace, and preferences. Unlike static systems, our AI continuously learns and optimizes the educational experience, resulting in 40% better retention rates and personalized learning paths that evolve with each student."
   },
   {
-    question: "Can Mentron integrate with our existing educational tools?",
-    answer: "Absolutely! Mentron seamlessly integrates with 500+ popular educational and productivity tools including Google Workspace, Microsoft Teams, Zoom, Canvas, Blackboard, Moodle, and many more. Our API-first approach ensures smooth integration with your existing workflow without disrupting current processes."
-  },
-  {
     question: "What kind of support and training do you provide?",
     answer: "We provide comprehensive onboarding with dedicated success managers, live training sessions, extensive documentation, video tutorials, and 24/7 customer support. Our team works closely with institutions to ensure successful implementation and maximum adoption across all user levels."
   },
@@ -27,10 +23,6 @@ const faqs = [
   {
     question: "What's the typical implementation timeline?",
     answer: "Most institutions are up and running within 2-4 weeks. Our implementation process includes data migration, user training, customization, and testing. We work with your timeline and can accommodate faster deployments for urgent needs or more gradual rollouts for large institutions."
-  },
-  {
-    question: "Can we customize Mentron to match our institution's branding?",
-    answer: "Absolutely! Mentron offers extensive customization options including your institution's colors, logos, fonts, and even custom domain names. We can also create custom themes and layouts that align with your brand guidelines and institutional identity."
   },
   {
     question: "What analytics and reporting capabilities does Mentron provide?",
@@ -59,7 +51,7 @@ const FaqSection = () => {
             </div>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white">
             Got Questions? We've Got <span className="text-blue-600 dark:text-blue-400">Answers</span>
           </h2>
           
@@ -105,7 +97,7 @@ const FaqSection = () => {
 
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="font-heading text-2xl font-bold text-white mb-4">
               Still have questions?
             </h3>
             <p className="text-blue-100 mb-6">

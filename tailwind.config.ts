@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '375px',
+      },
+      fontFamily: {
+        'heading': ['ESRebond Grotesque', 'Inter', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'system-ui', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -78,10 +85,19 @@ const config: Config = {
             height: '0',
           },
         },
+        'spin-slow': {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'spin-slow': 'spin-slow 8s linear infinite',
       },
     },
   },

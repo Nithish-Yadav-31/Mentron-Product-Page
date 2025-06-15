@@ -6,10 +6,13 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,35 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavigation = (targetId: string) => {
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+    
+    if (pathname === '/') {
+      // If on home page, just scroll to section
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      // If on different page, navigate to home and then scroll
+      router.push('/');
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${
@@ -59,9 +91,12 @@ const Navbar = () => {
           <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             Features
           </Link>
-          <Link href="#why" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <button 
+            onClick={() => handleNavigation('why')}
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+          >
             Why Mentron
-          </Link>
+          </button>
           <Link href="/privacy" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             Privacy
           </Link>
@@ -77,7 +112,7 @@ const Navbar = () => {
             <Link href="/institutional-demo">Institutional Demo</Link>
           </Button>
           <Button asChild variant="default" className="rounded-md bg-primary hover:bg-primary/90 text-primary-foreground dark:text-white transition-all duration-300 shadow-[0_0_20px_4px_rgba(0,119,255,0.4)] hover:shadow-[0_0_25px_6px_rgba(0,119,255,0.6)] ring-2 ring-blue-400/30 hover:ring-blue-400/50">
-            <Link href="/individual-inquiry">Get Started</Link>
+            <Link href="/individual-inquiry">Join Waitlist</Link>
           </Button>
         </div>
 
@@ -102,9 +137,12 @@ const Navbar = () => {
           <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
             Features
           </Link>
-          <Link href="#why" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
+          <button 
+            onClick={() => handleNavigation('why')}
+            className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors text-left"
+          >
             Why Mentron
-          </Link>
+          </button>
           <Link href="/privacy" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
             Privacy
           </Link>

@@ -55,19 +55,24 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li><a href="mailto:contact@Mentron" className="text-sm text-muted-foreground hover:text-primary">contact@Mentron</a></li>
+              <li><a href="mailto:nithish@mentron.in" className="text-sm text-muted-foreground hover:text-primary">contact@Mentron</a></li>
             </ul>
           </div>
         </div>
-        
+      
+
         <div className="pt-8 border-t text-center">
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} Mentron. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            Built with ❤ by Nithish
           </p>
         </div>
       </div>
     </footer>
   );
 };
+
 
 export default Footer;
