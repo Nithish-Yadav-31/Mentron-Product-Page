@@ -1,9 +1,14 @@
 import React from 'react';
 
 const FlashcardsEmbed: React.FC = () => {
+  // Use absolute URL in production, relative in development
+  const src = process.env.NODE_ENV === 'production' 
+    ? `${process.env.NEXT_PUBLIC_SITE_URL || ''}/flashcards.html`
+    : '/flashcards.html';
+
   return (
     <iframe
-      src="/flashcards.html" // Path relative to the public directory
+      src={src}
       style={{
         border: 'none',
         width: '100%',

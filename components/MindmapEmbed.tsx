@@ -1,9 +1,14 @@
 import React from 'react';
 
 const MindmapEmbed: React.FC = () => {
+  // Use absolute URL in production, relative in development
+  const src = process.env.NODE_ENV === 'production' 
+    ? `${process.env.NEXT_PUBLIC_SITE_URL || ''}/mindmap.html`
+    : '/mindmap.html';
+
   return (
     <iframe
-      src="/mindmap.html" // Path relative to the public directory
+      src={src}
       style={{
         border: 'none',
         width: '100%',
