@@ -63,26 +63,26 @@ const LmsPowerhouse = () => {
                 </div>
                 
                 {/* Badge overlays */}
-                <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                      <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 xs:p-2 sm:p-3 md:p-4 border border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3 xs:gap-2 sm:gap-3">
+                    <div className="w-10 h-10 xs:w-6 xs:h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">Highest Accuracy</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">AI Grading</div>
+                      <div className="text-sm xs:text-xs sm:text-sm font-semibold text-gray-900 dark:text-gray-100">Highest Accuracy</div>
+                      <div className="text-xs xs:text-xs text-gray-500 dark:text-gray-400">AI Grading</div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 xs:p-2 sm:p-3 md:p-4 border border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3 xs:gap-2 sm:gap-3">
+                    <div className="w-10 h-10 xs:w-6 xs:h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
+                      <Clock className="w-5 h-5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">Time saving</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">No Manual Effort</div>
+                      <div className="text-sm xs:text-xs sm:text-sm font-semibold text-gray-900 dark:text-gray-100">Time saving</div>
+                      <div className="text-xs xs:text-xs text-gray-500 dark:text-gray-400">No Manual Effort</div>
                     </div>
                   </div>
                 </div>
@@ -140,14 +140,14 @@ const LmsPowerhouse = () => {
                 </div>
                 
                 {/* Badge overlays - repositioned to avoid hiding title */}
-                <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border border-gray-200 dark:border-gray-700 rotate-3 hover:rotate-0 transition-transform">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">30</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Max Questions</div>
+                <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 xs:p-3 sm:p-4 md:p-6 border border-gray-200 dark:border-gray-700 rotate-3 hover:rotate-0 transition-transform">
+                  <div className="text-2xl xs:text-lg sm:text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400">30</div>
+                  <div className="text-sm xs:text-xs sm:text-sm text-gray-600 dark:text-gray-400">Max Questions</div>
                 </div>
                 
-                <div className="absolute -top-6 -left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border border-gray-200 dark:border-gray-700 -rotate-3 hover:rotate-0 transition-transform">
-                  <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">99.8%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Accuracy</div>
+                <div className="absolute -top-6 -left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 xs:p-3 sm:p-4 md:p-6 border border-gray-200 dark:border-gray-700 -rotate-3 hover:rotate-0 transition-transform">
+                  <div className="text-2xl xs:text-lg sm:text-xl md:text-2xl font-bold text-cyan-600 dark:text-cyan-400">99.8%</div>
+                  <div className="text-sm xs:text-xs sm:text-sm text-gray-600 dark:text-gray-400">Accuracy</div>
                 </div>
               </div>
             </div>
@@ -247,21 +247,21 @@ const LmsPowerhouse = () => {
                 </div>
                 
                 {/* Badge overlays */}
-                <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
-                    <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">Live Generation</div>
+                <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 xs:p-2 sm:p-3 md:p-4 border border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3 xs:gap-2 sm:gap-3">
+                    <div className="w-3 h-3 xs:w-2 xs:h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full animate-ping"></div>
+                    <div className="text-sm xs:text-xs sm:text-sm font-semibold text-gray-900 dark:text-gray-100">Live Generation</div>
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
-                      <Target className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 xs:p-2 sm:p-3 md:p-4 border border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3 xs:gap-2 sm:gap-3">
+                    <div className="w-10 h-10 xs:w-6 xs:h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
+                      <Target className="w-5 h-5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">100%</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">Aligned</div>
+                      <div className="text-sm xs:text-xs sm:text-sm font-semibold text-gray-900 dark:text-gray-100">100%</div>
+                      <div className="text-xs xs:text-xs text-gray-500 dark:text-gray-400">Aligned</div>
                     </div>
                   </div>
                 </div>

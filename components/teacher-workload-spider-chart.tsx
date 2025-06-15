@@ -80,7 +80,7 @@ const renderCustomizedLabel = (isDarkMode: boolean) => (props: CustomizedLabelPr
       y={y + offsetY}
       dy={y < cy ? -5 : 13}
       fill={isDarkMode ? "#ffffff" : "#1e40af"}
-      fontSize={12}
+      fontSize={10}
       fontWeight="bold"
       textAnchor={textAnchor}
       dominantBaseline="middle"
@@ -110,8 +110,8 @@ const TeacherWorkloadSpiderChart: React.FC = () => {
   }, [])
 
   return (
-    <div className="w-full h-[500px] md:h-[650px] p-4 bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800">
-      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4 text-center">
+    <div className="w-full h-[400px] xs:h-[450px] sm:h-[500px] md:h-[650px] p-4 xs:p-2 sm:p-3 md:p-4 bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800">
+      <h3 className="text-lg xs:text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4 xs:mb-2 sm:mb-3 md:mb-4 text-center">
         Teacher Weekly Workload
       </h3>
       <ResponsiveContainer width="100%" height="90%">
@@ -132,13 +132,13 @@ const TeacherWorkloadSpiderChart: React.FC = () => {
           <PolarAngleAxis
             dataKey="activity"
             stroke={isDarkMode ? "#9ca3af" : "#6b7280"}
-            tick={{ fontSize: 10, fill: isDarkMode ? "#f3f4f6" : "#4b5563" }}
+            tick={{ fontSize: 8, fill: isDarkMode ? "#f3f4f6" : "#4b5563" }}
           />
           <PolarRadiusAxis
             angle={30}
             domain={[0, 6]}
             stroke={isDarkMode ? "#6b7280" : "#9ca3af"}
-            tick={{ fill: isDarkMode ? "#d1d5db" : "#6b7280" }}
+            tick={{ fill: isDarkMode ? "#d1d5db" : "#6b7280", fontSize: 8 }}
           />
           <Radar
             name="Weekly Hours"
@@ -147,8 +147,8 @@ const TeacherWorkloadSpiderChart: React.FC = () => {
             fill="url(#colorHours)"
             fillOpacity={0.75}
             strokeWidth={2.5}
-            dot={{ r: 4, fill: isDarkMode ? "#60a5fa" : "#2563eb", stroke: isDarkMode ? "#93c5fd" : "#60a5fa" }}
-            activeDot={{ r: 6, fill: isDarkMode ? "#3b82f6" : "#1d4ed8", stroke: isDarkMode ? "#93c5fd" : "#60a5fa" }}
+            dot={{ r: 3, fill: isDarkMode ? "#60a5fa" : "#2563eb", stroke: isDarkMode ? "#93c5fd" : "#60a5fa" }}
+            activeDot={{ r: 5, fill: isDarkMode ? "#3b82f6" : "#1d4ed8", stroke: isDarkMode ? "#93c5fd" : "#60a5fa" }}
             label={renderCustomizedLabel(isDarkMode)}
           />
           <Tooltip
@@ -157,7 +157,7 @@ const TeacherWorkloadSpiderChart: React.FC = () => {
           />
           <Legend
             wrapperStyle={{ paddingTop: "25px" }}
-            formatter={(value) => <span className={isDarkMode ? "text-gray-200" : "text-gray-700"} style={{ fontSize: '14px' }}>{value}</span>}
+            formatter={(value) => <span className={isDarkMode ? "text-gray-200" : "text-gray-700"} style={{ fontSize: '12px' }}>{value}</span>}
           />
         </RadarChart>
       </ResponsiveContainer>

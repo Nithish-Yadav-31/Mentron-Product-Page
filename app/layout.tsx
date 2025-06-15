@@ -8,6 +8,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Mentron - AI-Powered Learning Management System',
   description: 'Transform education with intelligent AI solutions for institutions, educators, and students.',
+  icons: {
+    icon: '/resources/logo/mentron_geo_logo_blue.png',
+    shortcut: '/resources/logo/mentron_geo_logo_blue.png',
+    apple: '/resources/logo/mentron_geo_logo_blue.png',
+  },
 };
 
 export default function RootLayout({
