@@ -51,8 +51,8 @@ const ProductComparison = () => {
 
               <div className="space-y-4 mb-8">
                 {[
-                  'Faculty Content Generation Tools (Quiz, Assignment, QP Gen)',
-                  'Student Learning Tools (Mindmaps, Knowledge Graphs, Chat)',
+                  'Faculty Content Generation Tools (Quiz and Assignment) genrators',
+                  'Student Learning Tools (Mindmaps, Knowledge Graphs, Flashcards)',
                   'Automated Grading & Personalized AI Feedback',
                   'Student Weakness Identification & Analytics'
                 ].map((feature, index) => (
@@ -97,10 +97,10 @@ const ProductComparison = () => {
 
               <div className="space-y-4 mb-8">
                 {[
-                  'AI Mindmap Generator (98% validation)',
-                  'Knowledge Graph Explorer (93% accuracy)',
+                  'Next Level Mindmap Generator',
+                  'Knowledge Graph Generator',
                   'Chat with Documents & Websites',
-                  'Visual Explainer for Complex Concepts'
+                  'Flashcards Generator'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="bg-green-100 dark:bg-green-900/30 rounded-full p-1 mt-0.5">

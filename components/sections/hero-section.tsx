@@ -46,8 +46,8 @@ const HeroSection = () => {
             </Link>
           </Button>
           <Button asChild variant="outline" className={`border-primary/20 hover:bg-primary/5 font-medium px-6 py-3 rounded-md transition-shadow duration-300 hover:shadow-[0_0_16px_4px_rgba(0,215,255,0.6)] ${theme === 'dark' ? 'text-white' : ''}`}>
-            <Link href="/individual-inquiry">
-              Join Waitlist <ExternalLink className="ml-2 h-4 w-4" />
+            <Link href="https://app.mentron.in" target="_blank" rel="noopener noreferrer">
+              Try Beta Now (invite only)<ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

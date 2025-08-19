@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const PricingSection = () => {
-  const [isYearly, setIsYearly] = useState(true)
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'quarterly'>('quarterly')
 
   const monthlyFeatures = [
     { icon: Users, text: "Full access to AI-Powered Faculty Suite" },
@@ -17,7 +17,7 @@ const PricingSection = () => {
     { icon: Zap, text: "Standard AI Processing Limits" },
   ]
 
-  const yearlyFeatures = [
+  const quarterlyFeatures = [
     { icon: Users, text: "Full access to AI-Powered Faculty Suite" },
     { icon: BarChart3, text: "Comprehensive Student Success Navigator" },
     { icon: Settings, text: "Robust Course Management" },
@@ -26,7 +26,7 @@ const PricingSection = () => {
     { icon: Headphones, text: "Priority 24/7 Email & Chat Support", highlight: true },
     { icon: Star, text: "Dedicated Onboarding & Training Workshops", highlight: true },
     { icon: Zap, text: "Expanded AI Generation Capacity", highlight: true },
-    { icon: BarChart3, text: "Annual Data Trends Report & Analytics", highlight: true },
+    { icon: BarChart3, text: "Quarterly Data Trends Report & Analytics", highlight: true },
     { icon: Rocket, text: "Early Access to Beta Features", highlight: true },
     { icon: Settings, text: "Flexible Billing & Invoice Options", highlight: true },
   ]
@@ -52,7 +52,7 @@ const PricingSection = () => {
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Choose the plan that best fits your institution's needs and scale. Both plans offer Mentron's complete
-            AI-powered faculty and student tools, with the Annual plan unlocking exclusive benefits for deeper
+            AI-powered faculty and student tools, with the Quarterly plan unlocking exclusive benefits for deeper
             integration and priority support.
           </p>
         </div>
@@ -61,9 +61,9 @@ const PricingSection = () => {
         <div className="flex justify-center mb-12 relative z-10">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-1 rounded-xl flex items-center border border-gray-200 dark:border-gray-700 shadow-lg">
             <button
-              onClick={() => setIsYearly(false)}
+              onClick={() => setBillingPeriod('monthly')}
               className={`px-6 xs:px-3 sm:px-4 md:px-6 py-3 xs:py-2 sm:py-3 rounded-lg text-sm xs:text-xs sm:text-sm font-medium transition-all ${
-                !isYearly
+                billingPeriod === 'monthly'
                   ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-md"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
               }`}
@@ -71,16 +71,16 @@ const PricingSection = () => {
               Monthly Billing
             </button>
             <button
-              onClick={() => setIsYearly(true)}
+              onClick={() => setBillingPeriod('quarterly')}
               className={`px-6 xs:px-3 sm:px-4 md:px-6 py-3 xs:py-2 sm:py-3 rounded-lg text-sm xs:text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
-                isYearly
+                billingPeriod === 'quarterly'
                   ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-md"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
               }`}
             >
               <Zap className="w-4 h-4 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-blue-600" />
-              Yearly Billing
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs xs:text-xs px-2 xs:px-1 py-1 rounded-full hidden xs:inline">Most Popular! Save 37.5%</span>
+              Quarterly Billing
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs xs:text-xs px-2 xs:px-1 py-1 rounded-full hidden xs:inline">Most Popular! Save 50%</span>
             </button>
           </div>
         </div>
@@ -90,7 +90,7 @@ const PricingSection = () => {
           {/* Monthly Plan */}
           <div
             className={`relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-2xl border-2 p-8 xs:p-4 sm:p-6 md:p-8 shadow-2xl transition-all duration-300 ${
-              !isYearly ? "border-blue-600 scale-105 shadow-blue-500/20" : "border-gray-200 dark:border-gray-700"
+              billingPeriod === 'monthly' ? "border-blue-600 scale-105 shadow-blue-500/20" : "border-gray-200 dark:border-gray-700"
             }`}
           >
             <div className="mb-6 xs:mb-4 sm:mb-6">
@@ -100,8 +100,11 @@ const PricingSection = () => {
               <h3 className="text-2xl xs:text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Mentron Monthly</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 xs:mb-4 sm:mb-6 text-sm xs:text-xs sm:text-sm">Flexibility to start, adapt, and scale.</p>
               <div className="mb-6 xs:mb-4 sm:mb-6">
-                <span className="text-4xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">$20</span>
-                <span className="text-gray-600 dark:text-gray-400 text-sm xs:text-xs sm:text-sm">/month</span>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white line-through text-gray-500 dark:text-gray-400">$20</span>
+                  <span className="text-4xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">$9.99</span>
+                  <span className="text-gray-600 dark:text-gray-400 text-sm xs:text-xs sm:text-sm">/month</span>
+                </div>
                 <p className="text-sm xs:text-xs text-gray-500 dark:text-gray-500 mt-1">Billed monthly</p>
               </div>
             </div>
@@ -125,13 +128,13 @@ const PricingSection = () => {
             <p className="text-center text-sm xs:text-xs text-gray-500 dark:text-gray-500 mt-3 xs:mt-2 sm:mt-3">Begin your transformation.</p>
           </div>
 
-          {/* Yearly Plan */}
+          {/* Quarterly Plan */}
           <div
             className={`relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-2xl border-2 p-8 xs:p-4 sm:p-6 md:p-8 shadow-2xl transition-all duration-300 ${
-              isYearly ? "border-blue-600 scale-105 shadow-blue-500/20" : "border-gray-200 dark:border-gray-700"
+              billingPeriod === 'quarterly' ? "border-blue-600 scale-105 shadow-blue-500/20" : "border-gray-200 dark:border-gray-700"
             }`}
           >
-            {isYearly && (
+            {billingPeriod === 'quarterly' && (
               <div className="absolute -top-4 xs:-top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 xs:px-3 sm:px-4 py-2 xs:py-1 sm:py-2 rounded-full text-sm xs:text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg">
                   <Star className="w-4 h-4 xs:w-3 xs:h-3 sm:w-4 sm:h-4" />
@@ -142,31 +145,32 @@ const PricingSection = () => {
 
             <div className="mb-6 xs:mb-4 sm:mb-6">
               <div className="inline-flex items-center px-4 xs:px-3 sm:px-4 py-2 xs:py-1 sm:py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm xs:text-xs sm:text-sm font-medium mb-4 xs:mb-3 sm:mb-4 border border-blue-200 dark:border-blue-800">
-                Annual
+                Quarterly
               </div>
-              <h3 className="text-2xl xs:text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Mentron Annual</h3>
+              <h3 className="text-2xl xs:text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Mentron Quarterly</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 xs:mb-4 sm:mb-6 text-sm xs:text-xs sm:text-sm">
                 Unlock maximum value, support, and institutional growth.
               </p>
               <div className="mb-6 xs:mb-4 sm:mb-6">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">$150</span>
-                  <span className="text-gray-600 dark:text-gray-400 text-sm xs:text-xs sm:text-sm">/year</span>
+                  <span className="text-4xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white line-through text-gray-500 dark:text-gray-400">$80</span>
+                  <span className="text-4xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">$39.99</span>
+                  <span className="text-gray-600 dark:text-gray-400 text-sm xs:text-xs sm:text-sm">/4 months</span>
                 </div>
-                <p className="text-lg xs:text-base sm:text-lg text-blue-600 dark:text-blue-400 font-semibold">Only $12.50/month</p>
-                <p className="text-sm xs:text-xs text-gray-500 dark:text-gray-500">(billed annually)</p>
+                <p className="text-lg xs:text-base sm:text-lg text-blue-600 dark:text-blue-400 font-semibold">Only $9.99/month</p>
+                <p className="text-sm xs:text-xs text-gray-500 dark:text-gray-500">(billed quarterly)</p>
                 <div className="bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-400 px-4 xs:px-3 sm:px-4 py-3 xs:py-2 sm:py-3 rounded-xl mt-3 xs:mt-2 sm:mt-3 border border-green-200 dark:border-green-800">
                   <div className="flex items-center gap-2">
                     <Rocket className="w-4 h-4 xs:w-3 xs:h-3 sm:w-4 sm:h-4" />
-                    <span className="font-semibold text-sm xs:text-xs sm:text-sm">Save 37.5% annually (equal to $90)!</span>
+                    <span className="font-semibold text-sm xs:text-xs sm:text-sm">Save 50% quarterly (equal to $40)!</span>
                   </div>
-                  <p className="text-sm xs:text-xs mt-1">*Billed $150 upfront for the year</p>
+                  <p className="text-sm xs:text-xs mt-1">*Billed $39.99 upfront for 4 months</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4 xs:space-y-2 sm:space-y-3 md:space-y-4 mb-8 xs:mb-4 sm:mb-6 md:mb-8">
-              {yearlyFeatures.map((feature, index) => (
+              {quarterlyFeatures.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3 xs:gap-2 sm:gap-3">
                   <div className="flex-shrink-0 w-5 h-5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 rounded-full bg-blue-600 flex items-center justify-center mt-0.5">
                     <Check className="w-3 h-3 xs:w-2 xs:h-2 sm:w-3 sm:h-3 text-white" />
@@ -184,7 +188,7 @@ const PricingSection = () => {
 
             <Button asChild className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-6 xs:py-4 sm:py-5 md:py-6 text-lg xs:text-sm sm:text-base md:text-lg rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl">
               <Link href="/institutional-demo">
-                Commit Annually & Save More
+                Commit Quarterly & Save More
               </Link>
             </Button>
             <p className="text-center text-sm xs:text-xs text-gray-500 dark:text-gray-500 mt-3 xs:mt-2 sm:mt-3">
