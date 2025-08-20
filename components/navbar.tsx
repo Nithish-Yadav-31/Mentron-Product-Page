@@ -88,6 +88,12 @@ const Navbar = () => {
           <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             About
           </Link>
+          <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Blog
+          </Link>
+          <Link href="/resources" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Resources
+          </Link>
           <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             Features
           </Link>
@@ -133,6 +139,12 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-md border-b p-4 flex flex-col gap-4">
           <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
             About
+          </Link>
+          <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
+            Blog
+          </Link>
+          <Link href="/resources" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
+            Resources
           </Link>
           <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors">
             Features
