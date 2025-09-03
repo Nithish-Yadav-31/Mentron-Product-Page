@@ -66,7 +66,7 @@ const Footer = () => {
             &copy; {currentYear} Mentron. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            Built with ❤ by Nithish
+            Built with ❤ by Team Mentron
           </p>
         </div>
       </div>
