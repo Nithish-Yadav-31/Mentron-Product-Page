@@ -13,7 +13,6 @@ export const WavyBackground = ({
   blur = 20,
   speed = "fast",
   waveOpacity = 0.8,
-  height = "h-screen", // Allow custom height
   ...props
 }: {
   children?: any;
@@ -25,7 +24,6 @@ export const WavyBackground = ({
   blur?: number;
   speed?: "slow" | "fast";
   waveOpacity?: number;
-  height?: string; // Custom height class
   [key: string]: any;
 }) => {
   const noise = createNoise3D();
@@ -116,35 +114,18 @@ export const WavyBackground = ({
     ctxRef.current = ctx;
 
     const handleResize = () => {
-      const container = canvas.parentElement;
-      if (container) {
-        const rect = container.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-      } else {
-        // Fallback to window dimensions if no container
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
 
     handleResize(); // Initial size and blur
-    
-    // Use ResizeObserver for better container size detection
-    const resizeObserver = new ResizeObserver(handleResize);
-    if (canvas.parentElement) {
-      resizeObserver.observe(canvas.parentElement);
-    }
-    
-    // Fallback to window resize for broader compatibility
     window.addEventListener("resize", handleResize);
 
     // Start animation loop
     animationIdRef.current = requestAnimationFrame(render);
 
     return () => {
-      resizeObserver.disconnect();
       window.removeEventListener("resize", handleResize);
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
@@ -163,20 +144,19 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "relative w-full",
-        height,
+        "h-screen flex flex-col items-center justify-center",
         containerClassName
       )}
     >
       <canvas
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 z-0"
         ref={canvasRef}
         id="canvas"
         style={{
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
         }}
       ></canvas>
-      <div className={cn("relative z-10 w-full h-full flex flex-col items-center justify-center", className)} {...props}>
+      <div className={cn("relative z-10", className)} {...props}>
         {children}
       </div>
     </div>

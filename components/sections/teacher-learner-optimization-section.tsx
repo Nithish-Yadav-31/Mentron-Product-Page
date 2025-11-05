@@ -24,11 +24,8 @@ const studentColors = ["#1e3a8a", "#1e40af", "#2563eb", "#3b82f6"]
 
 const TeacherLearnerOptimizationSection: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 bg-white dark:bg-black relative overflow-hidden">
-      {/* Background glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-indigo-500/3 to-blue-600/5 dark:from-blue-500/10 dark:via-indigo-500/8 dark:to-blue-600/10 rounded-3xl blur-3xl -z-10"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section className="w-full py-16 px-4 bg-white dark:bg-black">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4 leading-tight">
