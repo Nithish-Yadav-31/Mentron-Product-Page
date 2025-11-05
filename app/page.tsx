@@ -8,7 +8,7 @@ import ProductComparison from '@/components/sections/product-comparison';
 import LmsPowerhouse from '@/components/sections/lms-powerhouse';
 import Ecosystem from '@/components/sections/ecosystem';
 import StudentLearningTools from '@/components/sections/student-learning-tools';
-// import PricingSection from '@/components/sections/pricing-section';
+import PricingSection from '@/components/sections/pricing-section';
 import CtaSection from '@/components/sections/cta-section';
 import FaqSection from '@/components/sections/faq-section';
 import Footer from '@/components/footer';
@@ -24,7 +24,7 @@ export default function Home() {
       <LmsPowerhouse />
       <Ecosystem />
       <StudentLearningTools />
-      {/* <PricingSection /> */}
+      <PricingSection />
       <CtaSection />
       <FaqSection />
       <Footer />
