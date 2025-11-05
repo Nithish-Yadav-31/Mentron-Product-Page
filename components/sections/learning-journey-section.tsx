@@ -198,8 +198,6 @@ const individualSteps = [
 ]
 
 const LearningJourneySection: React.FC = () => {
-  return null; // Hidden for now
-  /*
   return (
     <section className="w-full bg-white dark:bg-black">
       <DualTimeline
@@ -211,7 +209,6 @@ const LearningJourneySection: React.FC = () => {
       />
     </section>
   )
-  */
 }
 
 export default LearningJourneySection 
