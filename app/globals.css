@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font - ESRebond Grotesque Bold */
+@font-face {
+  font-family: 'ESRebond Grotesque';
+  src: url('/resources/fonts/ESRebondGrotesque-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 214 20% 96%;
+    --secondary-foreground: 214 100% 20%;
+    --muted: 214 20% 96%;
+    --muted-foreground: 214 15% 45%;
+    --accent: 214 30% 92%;
+    --accent-foreground: 214 100% 25%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 20% 89%;
+    --input: 214 20% 89%;
+    --ring: 214 100% 50%;
+    --chart-1: 214 100% 50%;
+    --chart-2: 214 80% 60%;
+    --chart-3: 214 60% 70%;
+    --chart-4: 214 40% 80%;
+    --chart-5: 214 20% 90%;
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 5%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 5%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 214 100% 50%;
+    --chart-1: 214 100% 50%;
+    --chart-2: 214 80% 60%;
+    --chart-3: 214 60% 70%;
+    --chart-4: 214 40% 80%;
+    --chart-5: 214 20% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Font Utilities */
+@layer utilities {
+  .font-heading {
+    font-family: 'ESRebond Grotesque', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-heading-medium {
+    font-family: 'ESRebond Grotesque', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+  }
+  
+  /* Apply heading font to common heading elements */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'ESRebond Grotesque', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Aurora Animation */
+@keyframes aurora {
+  from {
+    background-position:
+      50% 50%,
+      50% 50%;
+  }
+  to {
+    background-position:
+      350% 50%,
+      350% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 30s linear infinite;
+}
+
+/* Glass Card Effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 18px 9px rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 0 20px 10px rgba(255, 255, 255, 0.95);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+/* Dark mode glass card */
+.dark .glass-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 18px 9px rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card:hover {
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 0.15);
+}

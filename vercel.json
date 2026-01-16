@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "src": "/flashcards.html",
+      "dest": "/flashcards.html"
+    },
+    {
+      "src": "/kg.html", 
+      "dest": "/kg.html"
+    },
+    {
+      "src": "/mindmap.html",
+      "dest": "/mindmap.html"
+    }
+  ]
+} 
